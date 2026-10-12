@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: ZZ Canary Control API
+  version: 0.0.1
+  description: |
+    Benign control fixture for Agent Context ingestion testing (team 46199161).
+    Markers: ZZCTRL_DESC_ALPHA. Plain ASCII only - no special characters.
+    Purpose: prove the ingestion flow works and show how marker strings are
+    stored when nothing unusual is present.
+  contact:
+    name: ZZ Control Contact
+    email: zzctrl@example.invalid
+servers:
+  - url: https://zz-canary-ctrl.internal.example/v1
+    description: Canary control endpoint
+tags:
+  - name: zzctrl
+    description: Canary control operations
+paths:
+  /zzctrl/alpha:
+    get:
+      operationId: zzctrlAlphaGet
+      summary: ZZCTRL_SUMMARY_GET
+      description: ZZCTRL_DESC_GET
+      tags: [zzctrl]
+      responses:
+        '200':
+          description: OK
+  /zzctrl/beta:
+    post:
+      operationId: zzctrlBetaPost
+      summary: ZZCTRL_SUMMARY_POST
+      description: ZZCTRL_DESC_POST
+      tags: [zzctrl]
+      responses:
+        '201':
+          description: Created
+  /zzctrl/gamma:
+    delete:
+      operationId: zzctrlGammaDelete
+      summary: ZZCTRL_SUMMARY_DELETE
+      tags: [zzctrl]
+      responses:
+        '204':
+          description: Deleted
